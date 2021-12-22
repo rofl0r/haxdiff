@@ -298,6 +298,7 @@ static int patch(char *fn, char *fn_out, int force) {
 		fs = ftello(f[0]);
 		if(copybytes(f[0], f[1], off[0], fs)) goto copy_err;
 	}
+	for(ret = 0; ret < 2; ++ret) fclose(f[ret]);
 	return 0;
 }
 
