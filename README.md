@@ -74,7 +74,7 @@ following advantages:
 - no limits for filesize of patched file
 - supports truncation and expansion
 - can optionally verify that the file to be patched matches the patch
-- creating a haxdiff and looking at it in an editor with synatax highlighting
+- creating a haxdiff and looking at it in an editor with syntax highlighting
   for standard diffs pretty much replaces all usecases for tools like
   `vbindiff`.
 - as only 16 hexadecimal characters, `@-+,` and newline characters are
