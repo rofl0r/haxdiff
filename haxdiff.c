@@ -303,10 +303,10 @@ static int patch(char *fn, char *fn_out, int force) {
 }
 
 static int usage(char *a0) {
-	printf(
-		"usage: %s MODE FILE1 FILE2\n"
-		"creates or applies a binary diff.\n"
-		"MODE: d - diff, p - patch, P - force patch\n"
+	fprintf(stderr,
+		"usage: %s MODE FILE1 FILE2\n\n"
+		"creates or applies a binary diff.\n\n"
+		"MODE: d - diff, p - patch, P - force patch\n\n"
 		"in mode d, create a diff between files FILE1 and FILE2,\n"
 		"and write a patch to stdout.\n"
 		"the generated patch describes how to generate FILE2 from FILE1.\n"
