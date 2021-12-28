@@ -10,6 +10,7 @@ Copyright (C) 2011-2021 rofl0r
    modified for direct inclusion in tinyproxy, and for this purpose released under
    the license of tinyproxy. */
 
+#pragma RcB2 DEP "sblist.c"
 
 #ifdef __cplusplus
 extern "C" {
