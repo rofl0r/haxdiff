@@ -292,7 +292,7 @@ static int patch(char *fn, char *fn_out, int force) {
 			break;
 		}
 	}
-	if(d.type == DT_DIFF) {
+	if(d.type == DT_DIFF || d.type == DT_NONE) {
 		off_t fs;
 		if(fseeko(f[0], 0, SEEK_END)) goto copy_err;
 		fs = ftello(f[0]);
