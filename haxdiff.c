@@ -224,8 +224,8 @@ static int checkbytes(FILE *in, off_t off, char *hex, off_t *processed) {
 	if(decode_hex(hex, hbytes, &l)) return -1;
 	*processed = l;
 	if(fseeko(in, off, SEEK_SET)) return 1;
-	if(l != fread(rbuf, 1, l, in)) return 1;
-	if(memcmp(hbytes, rbuf, l)) return 2;
+	if(l != fread(rbuf, 1, l, in)) return 2;
+	if(memcmp(hbytes, rbuf, l)) return 3;
 	return 0;
 }
 
@@ -269,10 +269,10 @@ static int patch(char *fn, char *fn_out, int force) {
 			if(d.type == DT_NONE) return malformed(lineno);
 			if((ret = checkbytes(f[0], off[0], pbuf+2, &r))) {
 				if(ret == -1) return malformed(lineno);
-				else if(ret == 1) {
-					fprintf(stderr, "error occured while checking patch\n");
+				else if(ret == 1 || ret == 2) {
+					fprintf(stderr, "line %lld: error occured while checking patch (%s)\n", (long long) lineno, ret == 1 ? "seek failed" : "short read");
 					return 1;
-				} else if(ret == 2) {
+				} else if(ret == 3) {
 					fprintf(stderr, "%s: input file doesn't match data on line %lld%s\n",
 						force ? "warning" : "error",
 						(long long) lineno,
