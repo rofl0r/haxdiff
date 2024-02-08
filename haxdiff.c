@@ -99,9 +99,9 @@ static void p_diff(FILE *f, off_t n, int chr) {
 
 static int diff(char *fn_old, char *fn_new) {
 	FILE *f[2];
-	f[0] = fopen(fn_old, "r");
+	f[0] = fopen(fn_old, "rb");
 	if(!f[0]) return 1;
-	f[1] = fopen(fn_new, "r");
+	f[1] = fopen(fn_new, "rb");
 	if(!f[1]) return 1;
 	unsigned char buf[2][16*1024];
 	size_t n[2];
@@ -241,9 +241,9 @@ static int writebytes(FILE *out, off_t off, char *hex, off_t *processed) {
 
 static int patch(char *fn, char *fn_out, int force) {
 	FILE *f[2];
-	f[0] = fopen(fn, "r");
+	f[0] = fopen(fn, "rb");
 	if(!f[0]) return 1;
-	f[1] = fopen(fn_out, "w");
+	f[1] = fopen(fn_out, "wb");
 	if(!f[1]) return 1;
 	off_t off[2] = {0}, r;
 	off_t lineno = 0;
