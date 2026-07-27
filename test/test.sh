@@ -77,6 +77,13 @@ $HD d a1024.dat "$patched" > $(tmp).1
 $HD p a1024.dat $(tmp).2 < $(tmp).1
 test_equal $(tmp).2 "$patched"
 
+## a patch that omits the optional minus lines
+
+patched=a1024_mod2.dat
+dotest "$patched without minus lines"
+$HD p a1024.dat $(tmp).2 < a1024_mod2_nominus.hdiff
+test_equal $(tmp).2 "$patched"
+
 ## testing corrupt input
 
 patched=a1024_mod2.dat
