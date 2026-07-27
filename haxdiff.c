@@ -150,7 +150,7 @@ static int diff(char *fn_old, char *fn_new) {
 		case DT_EXP: np = fs[1]-fs[0]; nm = 0; break;
 		case DT_TRUNC: np = 0; nm = fs[0]-fs[1]; break;
 		}
-		fprintf(stdout, "@@ %llx,-%llx,+%llx\n",
+		fprintf(stdout, "@@ %llx,-%llx,+%llx @@\n",
 				(long long) d->off,
 				(long long) nm, (long long) np);
 		if(nm) p_diff(f[0], nm, '-');

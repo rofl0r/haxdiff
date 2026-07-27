@@ -16,6 +16,9 @@ a patch consists of one or more hunks, with the following layout:
   number of bytes removed, `,+` number of bytes inserted.
   all 3 values are in hexadecimal without leading `0x`.
   example: `@@ 17b0,-4,+4`
+  the hunk header may be followed by an optional ` @@` tail, which improves
+  compatibility with existing syntax highlighters. the reference impl emits
+  it by default.
 - zero or more lines starting with `- ` and a hexadecimal byte sequence.
   if provided, the total number of bytes in all `- ` sequences must be
   identical to the number specified for `-` in the hunk header.
