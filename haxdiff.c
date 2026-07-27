@@ -316,7 +316,12 @@ static int usage(char *a0) {
 		"if mode is p, the replaced bytes must match those described in\n"
 		"the patch. if mode is P, the replaced bytes will be ignored.\n"
 		"if mode is d, the patch will be written to stdout.\n"
-		, a0);
+		"\nexample:\n"
+		"# create a haxdiff. marco.nes is the original game, the other a romhack\n"
+		"%s d marco.nes marco_romhack.nes > marco_romhack.diff\n\n"
+		"# apply a haxdiff. the file marco_hack_output.nes will be created\n"
+		"%s p marco.nes marco_hack_output.nes < marco_romhack.diff\n"
+		, a0, a0, a0);
 	return 1;
 }
 

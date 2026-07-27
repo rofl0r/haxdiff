@@ -139,3 +139,9 @@ usage
     the patch. if mode is P, the replaced bytes will be ignored.
     if mode is d, the patch will be written to stdout.
 
+    example:
+    # create a haxdiff. marco.nes is the original game, the other a romhack
+    haxdiff d marco.nes marco_romhack.nes > marco_romhack.diff
+
+    # apply a haxdiff. the file marco_hack_output.nes will be created
+    haxdiff p marco.nes marco_hack_output.nes < marco_romhack.diff
