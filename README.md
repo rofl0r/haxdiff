@@ -107,6 +107,11 @@ consistency can be controlled.
 it currently does not allow for hunks that have differing `+` and `-` - except
 for truncation and expansion cases.
 
+projects using the format
+-------------------------
+- carmiker's [single-header library implementation "haxpatch"](https://github.com/carmiker/haxpatch)
+- [cen64](https://gitlab.com/jgemu/cen64) nintendo 64 emulator
+
 license
 -------
 
