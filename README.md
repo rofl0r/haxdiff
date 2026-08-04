@@ -110,6 +110,7 @@ for truncation and expansion cases.
 projects using the format
 -------------------------
 - carmiker's [single-header library implementation "haxpatch"](https://github.com/carmiker/haxpatch)
+- [haxgui](https://github.com/rofl0r/haxgui) - a lean and mean win32 gui based on the above library (40 KB .exe)
 - [cen64](https://gitlab.com/jgemu/cen64) nintendo 64 emulator
 
 license
